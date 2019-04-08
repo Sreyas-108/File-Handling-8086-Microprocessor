@@ -20,7 +20,7 @@ handle dw ?
 		jc myexit	; Exit if error occurs.
 		mov handle,AX	; Store handle of file for future usage
 
-		lea dx,dsp1	; Offset of file name
+		lea dx,dsp1	; Offset of text to be written
 		mov bx,handle	; Store handle of file in BX
 		mov cx,16	; Number of bytes to write
 		mov ah,40h	; Write to file
@@ -39,7 +39,7 @@ handle dw ?
 		jc myexit	; Exit if error occurs.
 		mov handle,AX	; Store handle of file for future usage
 
-		lea dx,inp1
+		lea dx,inp1	; Offset of text to be read to in memory
 		mov bx,handle	; Store handle of file in BX
 		mov cx,0FH	; Number of bytes to read
 		mov ah,3fh	; Read file
